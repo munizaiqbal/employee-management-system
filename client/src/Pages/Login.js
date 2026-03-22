@@ -79,13 +79,13 @@ const Login = () => {
           <h2 className="mb-4 text-center">Login</h2>
           {error && <div className="alert alert-danger">{error}</div>}
 
-          <form onSubmit={handleSubmit} >
+          <form onSubmit={handleSubmit}   autocomplete="off">
             <div className="form-group mb-3">
               <label htmlFor="email">Email</label>
               <input
                 type="email"
                 name="email"
-                
+                 autocomplete="off"
                 className="form-control"
                 value={form.email}
                 onChange={handleChange}
@@ -110,6 +110,7 @@ const Login = () => {
 
             <button
               type="submit"
+               autocomplete="off"
               className="btn btn-primary w-100"
               disabled={!form.email || !form.password}
             >

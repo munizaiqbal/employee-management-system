@@ -258,43 +258,7 @@ export default function EmployeeDashboard() {
           </div>
         </div>
 
-        {/* Mobile Summary Cards (Alternative view for very small screens) */}
-        {!loading && attendance.length > 0 && (
-          <div className="d-block  mt-3">
-            <div className="row g-2">
-              <div className="col-4">
-                <div className="card bg-light">
-                  <div className="card-body p-2 text-center">
-                    <small className="text-muted d-block">Present</small>
-                    <span className="fw-bold">
-                      {attendance.filter(a => a.checkIn && !a.checkOut).length}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4">
-                <div className="card bg-light">
-                  <div className="card-body p-2 text-center">
-                    <small className="text-muted d-block">Absent</small>
-                    <span className="fw-bold">
-                      {attendance.filter(a => !a.checkIn).length}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-4">
-                <div className="card bg-light">
-                  <div className="card-body p-2 text-center">
-                    <small className="text-muted d-block">Total</small>
-                    <span className="fw-bold">
-                      {attendance.filter(a => !a.checkIn || (a.checkIn && !a.checkOut)).length}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+      
       </div>
     </div>
   );

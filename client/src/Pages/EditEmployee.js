@@ -67,8 +67,8 @@ const EditEmployee = () => {
     <div className="container mt-4">
       <h3>Edit Employee</h3>
 
-      <form onSubmit={handleUpdate}>
-        <div className="mb-3">
+      <form onSubmit={handleUpdate} className="ms-5 ps-3">
+        <div className="mb-3 ">
           <label>Name</label>
           <input
             type="text"
