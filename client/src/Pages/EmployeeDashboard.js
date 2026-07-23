@@ -22,7 +22,7 @@ export default function EmployeeDashboard() {
       setLoading(true);
 
       const res = await axios.get(
-        "http://localhost:5000/api/attendance/me",
+        "https://employee-management-system-1-gjsk.onrender.com/api/attendance/me",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -47,7 +47,7 @@ export default function EmployeeDashboard() {
   const markAttendance = async (type) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/attendance/mark",
+        "https://employee-management-system-1-gjsk.onrender.com/api/attendance/mark",
         { type },
         {
           headers: { Authorization: `Bearer ${token}` },

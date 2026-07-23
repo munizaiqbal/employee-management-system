@@ -16,7 +16,7 @@ const UpdateEmployee = () => {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-          "http://localhost:5000/api/employees",
+          "https://employee-management-system-1-gjsk.onrender.com/api/employees",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
