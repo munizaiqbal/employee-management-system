@@ -3,14 +3,14 @@ import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "../Services/api"; // adjust path if needed
 import Logo from "../Assets/employeelogo.png";
-import { jwtDecode } from 'jwt-decode';
+import { jwtDecode } from "jwt-decode";
 
-const token = localStorage.getItem('token');
+const token = localStorage.getItem("token");
 let isAdmin = false;
 
 if (token) {
   const decoded = jwtDecode(token);
-  isAdmin = decoded.role === 'admin';
+  isAdmin = decoded.role === "admin";
 }
 const Signup = () => {
   const navigate = useNavigate();
@@ -30,7 +30,10 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/register", formData);
+      await axios.post(
+        "https://employee-management-system-1-gjsk.onrender.com/api/auth/register",
+        formData,
+      );
       Swal.fire({
         icon: "success",
         title: "Account created successfully!",
@@ -108,13 +111,17 @@ const Signup = () => {
             />
           </div>
           {isAdmin && (
-          <div className="mb-3">
-            <label>Role</label>
-            <select name="role" className="form-select" onChange={handleChange}>
-              <option value="employee">Employee</option>
-              <option value="admin">Admin</option>
-            </select>
-          </div>
+            <div className="mb-3">
+              <label>Role</label>
+              <select
+                name="role"
+                className="form-select"
+                onChange={handleChange}
+              >
+                <option value="employee">Employee</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
           )}
           <button type="submit" className="btn btn-success w-100">
             Register

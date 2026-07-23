@@ -15,7 +15,7 @@ const AdminDashboard = () => {
     const fetchStats = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/dashboard/stats",
+          "https://employee-management-system-1-gjsk.onrender.com/api/dashboard/stats",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
   const loadEmployees = async (type) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/dashboard/${type}`,
+        `https://employee-management-system-1-gjsk.onrender.com/api/dashboard/${type}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -78,8 +78,12 @@ const AdminDashboard = () => {
                 onClick={() => loadEmployees("employees")}
               >
                 <div className="card-body d-flex flex-column justify-content-center align-items-center text-center p-3">
-                  <h6 className="card-title fs-6 fs-md-5 mb-2">Total Employees</h6>
-                  <p className="card-text fs-2 fw-bold mb-0">{stats.totalEmployees}</p>
+                  <h6 className="card-title fs-6 fs-md-5 mb-2">
+                    Total Employees
+                  </h6>
+                  <p className="card-text fs-2 fw-bold mb-0">
+                    {stats.totalEmployees}
+                  </p>
                 </div>
               </div>
             </div>
@@ -88,12 +92,16 @@ const AdminDashboard = () => {
             <div className="col-12 col-sm-6 col-lg-4">
               <div
                 className="card text-white bg-success  shadow-sm"
-                style={{ cursor: "pointer"}}
+                style={{ cursor: "pointer" }}
                 onClick={() => loadEmployees("present")}
               >
                 <div className="card-body d-flex flex-column justify-content-center align-items-center text-center p-3">
-                  <h6 className="card-title fs-6 fs-md-5 mb-2">Present Today</h6>
-                  <p className="card-text fs-2 fw-bold mb-0">{stats.presentToday}</p>
+                  <h6 className="card-title fs-6 fs-md-5 mb-2">
+                    Present Today
+                  </h6>
+                  <p className="card-text fs-2 fw-bold mb-0">
+                    {stats.presentToday}
+                  </p>
                 </div>
               </div>
             </div>
@@ -102,12 +110,14 @@ const AdminDashboard = () => {
             <div className="col-12 col-sm-6 col-lg-4">
               <div
                 className="card text-white bg-danger  shadow-sm"
-                style={{ cursor: "pointer"}}
+                style={{ cursor: "pointer" }}
                 onClick={() => loadEmployees("absent")}
               >
                 <div className="card-body d-flex flex-column justify-content-center align-items-center text-center p-3">
                   <h6 className="card-title fs-6 fs-md-5 mb-2">Absent Today</h6>
-                  <p className="card-text fs-2 fw-bold mb-0">{stats.absentToday}</p>
+                  <p className="card-text fs-2 fw-bold mb-0">
+                    {stats.absentToday}
+                  </p>
                 </div>
               </div>
             </div>
@@ -122,7 +132,9 @@ const AdminDashboard = () => {
                   <table className="table table-striped table-hover mb-0">
                     <thead className="table-light">
                       <tr>
-                        <th scope="col" style={{ width: '60px' }}>#</th>
+                        <th scope="col" style={{ width: "60px" }}>
+                          #
+                        </th>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                       </tr>
@@ -140,7 +152,7 @@ const AdminDashboard = () => {
                     </tbody>
                   </table>
                 </div>
-                
+
                 {/* Mobile-friendly row count */}
                 <div className="text-muted mt-3 small d-block d-sm-none">
                   Showing {employees.length} employee(s)
@@ -148,7 +160,7 @@ const AdminDashboard = () => {
               </div>
             </div>
           )}
-          
+
           {/* Empty state when no employees */}
           {employees.length === 0 && viewTitle && (
             <div className="alert alert-info mt-4 text-center">

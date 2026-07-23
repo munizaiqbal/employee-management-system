@@ -5,9 +5,9 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 import { AuthContext } from "../Context/AuthContext";
-import logo from '../Assets/employeelogo.png';
-import bgImage from '../Assets/ems.jpg';
-import './Login.css';
+import logo from "../Assets/employeelogo.png";
+import bgImage from "../Assets/ems.jpg";
+import "./Login.css";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -26,8 +26,8 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        form
+        "https://employee-management-system-1-gjsk.onrender.com/api/auth/login",
+        form,
       );
 
       const { token, user } = response.data;
@@ -48,7 +48,6 @@ const Login = () => {
       } else {
         navigate("/employee-dashboard");
       }
-
     } catch (err) {
       setError(err.response?.data?.msg || "Login failed");
     }
@@ -57,17 +56,25 @@ const Login = () => {
   return (
     <div className="login-wrapper">
       {/* Blurred background */}
-      <div className="background-blur" style={{ backgroundImage: `url(${bgImage})` }} />
+      <div
+        className="background-blur"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      />
 
       {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light px-4 shadow-sm justify-content-center position-relative z-3">
-        <a className="navbar-brand fw-bold fs-4 text-primary d-flex align-items-center gap-2" href="/">
+        <a
+          className="navbar-brand fw-bold fs-4 text-primary d-flex align-items-center gap-2"
+          href="/"
+        >
           <img
             src={logo}
             alt="Logo"
-            style={{ width: '35px', height: '35px', objectFit: 'contain' }}
+            style={{ width: "35px", height: "35px", objectFit: "contain" }}
           />
-          <span style={{ fontSize: '2rem', color: '#404969', fontWeight: 'bold' }}>
+          <span
+            style={{ fontSize: "2rem", color: "#404969", fontWeight: "bold" }}
+          >
             Employee Management System
           </span>
         </a>
@@ -79,13 +86,13 @@ const Login = () => {
           <h2 className="mb-4 text-center">Login</h2>
           {error && <div className="alert alert-danger">{error}</div>}
 
-          <form onSubmit={handleSubmit}   autocomplete="off">
+          <form onSubmit={handleSubmit} autocomplete="off">
             <div className="form-group mb-3">
               <label htmlFor="email">Email</label>
               <input
                 type="email"
                 name="email"
-                 autocomplete="off"
+                autocomplete="off"
                 className="form-control"
                 value={form.email}
                 onChange={handleChange}
@@ -110,7 +117,7 @@ const Login = () => {
 
             <button
               type="submit"
-               autocomplete="off"
+              autocomplete="off"
               className="btn btn-primary w-100"
               disabled={!form.email || !form.password}
             >

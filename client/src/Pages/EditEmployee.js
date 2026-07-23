@@ -19,10 +19,10 @@ const EditEmployee = () => {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-          `http://localhost:5000/api/employees/${id}`,
+          `https://employee-management-system-1-gjsk.onrender.com/api/employees/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
-          }
+          },
         );
 
         setEmployee(res.data);
@@ -48,11 +48,11 @@ const EditEmployee = () => {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/user/${id}/update`,
+        `https://employee-management-system-1-gjsk.onrender.com/api/user/${id}/update`,
         employee,
         {
           headers: { Authorization: `Bearer ${token}` },
-        }
+        },
       );
 
       Swal.fire("Success", "Employee updated successfully", "success");

@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api", // ✅ backend base URL
+  baseURL: "https://employee-management-system-1-gjsk.onrender.com/api", // ✅ backend base URL
 });
 
 // Example helper functions (optional)
