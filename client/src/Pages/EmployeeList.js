@@ -34,7 +34,8 @@ useEffect(() => {
     
       <div className="flex-grow-1 p-4 ms-4 mt-3">
         <div className="container ms-5 mt-5 box ">
-          <h2>All Employees</h2>
+        <h2>All Employees</h2>
+        {error && <div className="alert alert-danger">{error}</div>}
           {employees.length === 0 ? (
             <p>No employees found.</p>
           ) : (

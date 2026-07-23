@@ -1,4 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, {
+  useEffect,
+  useState,
+  useContext,
+  useCallback,
+} from "react";
 import axios from "axios";
 import { AuthContext } from "../Context/AuthContext";
 import Swal from "sweetalert2";
@@ -11,8 +16,8 @@ export default function EmployeeDashboard() {
 
   const token = localStorage.getItem("token");
 
-  // ✅ Fetch employee attendance
-  const fetchAttendance = async () => {
+  //  Fetch employee attendance
+  const fetchAttendance =useCallback(async () => {
     try {
       setLoading(true);
 
@@ -30,15 +35,15 @@ export default function EmployeeDashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  },[token]);
 
   useEffect(() => {
     if (token && user) {
       fetchAttendance();
     }
-  }, [token, user]);
+  }, [token, user,fetchAttendance]);
 
-  // ✅ Mark attendance
+  // Mark attendance
   const markAttendance = async (type) => {
     try {
       const res = await axios.post(
