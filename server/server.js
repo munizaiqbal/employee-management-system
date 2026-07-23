@@ -25,8 +25,8 @@ app.listen(PORT,()=>{
     mongo.connect(process.env.MONGO_URL).then(()=>{
         console.log("Mongo DB Connected")
     })
-    .catch(()=>{
-        console.log("Failed to Connect MOngoDB")
+    .catch((err)=>{
+        console.log("Failed to Connect MOngoDB",err)
     })
     console.log(`App Started at ${PORT}`)
 })
