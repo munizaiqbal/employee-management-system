@@ -8,7 +8,7 @@ import {
   FaListUl,
   FaSignOutAlt,
 } from "react-icons/fa";
-import './Sidebar.css'
+import "./Sidebar.css";
 
 const Sidebar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -40,64 +40,61 @@ const Sidebar = () => {
   }
 
   return (
-    <aside
-      className="bg-light border-end shadow-sm d-flex flex-md-column justify-content-between sidebar "
-
-    >
+    <aside className="bg-light border-end shadow-sm d-flex flex-column sidebar py-3 py-md-5">
       {/* Navigation links */}
-     <nav className="px-3 d-flex flex-md-column flex-wrap">
+      <nav className="px-3 d-flex mx-auto mx-sm-0 justify-content-center flex-md-column gap-1 overflow-auto">
         {role === "admin" && (
           <>
             <NavLink
               to="/admin"
               className={({ isActive }) =>
-                `d-flex align-items-center gap-2 px-3 py-2 rounded mb-2 text-decoration-none ${
+                `d-flex align-items-center  gap-2 px-3 py-2 rounded text-decoration-none ${
                   isActive ? "bg-primary text-white" : "text-dark"
                 }`
               }
               title="Dashboard"
             >
               <FaTachometerAlt />
-              <span>Dashboard</span>
+              <span className="d-none d-sm-inline">Dashboard</span>
             </NavLink>
 
             <NavLink
               to="/add-employee"
               className={({ isActive }) =>
-                `d-flex align-items-center gap-2 px-3 py-2 rounded mb-2 text-decoration-none ${
+                `d-flex align-items-center gap-2 px-3 py-2 rounded text-decoration-none ${
                   isActive ? "bg-primary text-white" : "text-dark"
                 }`
               }
               title="Add Employee"
             >
               <FaUserPlus />
-              <span>Add Employee</span>
+              <span className="d-none d-sm-inline">Add Employee</span>
             </NavLink>
 
             <NavLink
               to="/employees"
               className={({ isActive }) =>
-                `d-flex align-items-center gap-2 px-3 py-2 rounded mb-2 text-decoration-none ${
+                `d-flex align-items-center gap-2 px-3 py-2 rounded text-decoration-none ${
                   isActive ? "bg-primary text-white" : "text-dark"
                 }`
               }
               title="Employee List"
             >
               <FaListUl />
-              <span>Employee List</span>
+              <span className="d-none d-sm-inline">Employee List</span>
             </NavLink>
 
             <NavLink
               to="/update-employee"
               className={({ isActive }) =>
-                `d-flex align-items-center gap-2 px-3 py-2 rounded mb-2 text-decoration-none ${
+                `d-flex align-items-center gap-2 px-3 py-2 rounded text-decoration-none ${
                   isActive ? "bg-primary text-white" : "text-dark"
                 }`
               }
               title="Update Employee"
             >
               <FaUserEdit />
-              <span>Update Employee</span>
+              <span className="d-none d-sm-inline">Update Employee</span>
             </NavLink>
           </>
         )}
@@ -107,31 +104,31 @@ const Sidebar = () => {
           <NavLink
             to="/employee-dashboard"
             className={({ isActive }) =>
-              `d-flex align-items-center gap-2 px-3 py-2 rounded mb-2 text-decoration-none ${
-                isActive ? "bg-primary text-white" : "text-dark"
-              }`
+              `d-flex align-items-center justify-content-center  gap-2  px-3 py-2 rounded text-decoration-none w-100  w-md-auto ${
+            isActive ? "bg-primary text-white" : "text-dark"
+          }`
             }
             title="Dashboard"
           >
             <FaTachometerAlt />
-            <span>Dashboard</span>
+            <span className="d-none d-sm-inline">Dashboard</span>
           </NavLink>
         )}
-       </nav>
+      </nav>
 
       {/* 🚪 Logout Button — Only visible when logged in */}
       {(role === "admin" || role === "employee") && (
-        <div className="p-3 border-top">
+        <div className="px-3 pt-2 border-top mt-2">
           <button
             onClick={handleLogout}
             className="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2"
+            title="Logout"
           >
             <FaSignOutAlt />
-            <span>Logout</span>
+            <span className="d-none d-sm-inline">Logout</span>
           </button>
         </div>
       )}
-     
     </aside>
   );
 };

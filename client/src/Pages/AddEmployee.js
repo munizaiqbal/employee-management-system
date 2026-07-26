@@ -50,12 +50,13 @@ export default function AddEmployee() {
   };
 
   return (
-    <div className="container mt-4 ">
+    <div className="main-content">
+      <div className="container-fluid px-2 px-sm-3 px-md-4 py-4 mt-0 mt-md-5 pt-5 ms-3">
       <h3 className="mb-3">
-        <FaUserPlus className="me-2" /> Add New Employee
+         Add New Employee
       </h3>
 
-      <form onSubmit={handleSubmit} className="row g-3 ms-5 mt-2 box">
+      <form onSubmit={handleSubmit} className="row  mt-2 box">
         <div className="col-md-6">
           <label className="form-label">Username</label>
           <input
@@ -120,6 +121,7 @@ export default function AddEmployee() {
           </button>
         </div>
       </form>
-    </div>
+      </div>
+      </div>
   );
 }

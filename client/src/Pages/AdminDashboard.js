@@ -61,10 +61,10 @@ const AdminDashboard = () => {
 
   return (
     <div className="main-content">
-      <div className="container-fluid px-2 px-sm-3 px-md-4">
-        <div className="d-flex flex-column mt-4 mt-sm-5 pt-3 pt-sm-4 gap-3">
+      <div className="container-fluid px-2 px-sm-3 px-md-4 py-md-4 mt-md-5">
+        <div className="d-flex flex-column gap-3">
           {/* Header */}
-          <h2 className="text-center text-sm-start mb-2 mb-sm-3">
+          <h2 className="text-center text-sm-start mb-2 mb-sm-3 mt-5">
             Admin Dashboard
           </h2>
 

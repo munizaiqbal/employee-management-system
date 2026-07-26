@@ -64,7 +64,8 @@ const EditEmployee = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="main-content">
+      <div className="container-fluid px-2 px-sm-3 px-md-4 py-4 mt-5">
       <h3>Edit Employee</h3>
 
       <form onSubmit={handleUpdate} className="ms-5 ps-3">
@@ -103,7 +104,8 @@ const EditEmployee = () => {
 
         <button className="btn btn-primary">Update Employee</button>
       </form>
-    </div>
+      </div>
+      </div>
   );
 };
 

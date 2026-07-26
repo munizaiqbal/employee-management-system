@@ -25,18 +25,18 @@ function LayoutWrapper() {
   const location = useLocation();
 
   // Hide Navbar & Sidebar on Login or Signup pages
-  const hideLayout = ["/login", "/signup"].includes(
+  const hideSidebar = ["/login", "/signup"].includes(
     location.pathname.toLowerCase(),
   );
 
   return (
     <>
-      {!hideLayout && <Navbar />}
-     <div className="d-flex">
-      {!hideLayout && <Sidebar />} 
+       <Navbar />
+     <div className="d-flex flex-column flex-md-row mt-3">
+      {!hideSidebar && <Sidebar />} 
 
       <div
-        className="main-content flex-grow-1"
+        className=" flex-grow-1 "
       >
         <Routes>
           {/* Public Routes */}

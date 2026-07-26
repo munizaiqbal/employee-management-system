@@ -31,9 +31,10 @@ useEffect(() => {
   }, [loading, user]);
 
   return (
-    
-      <div className="flex-grow-1 p-4 ms-4 mt-3">
-        <div className="container ms-5 mt-5 box ">
+    <div className="main-content">
+      <div className="container-fluid ms-3 mt-5 box pt-2">
+      <div className="flex-grow-1 p-4 mt-3">
+        
         <h2>All Employees</h2>
         {error && <div className="alert alert-danger">{error}</div>}
           {employees.length === 0 ? (
@@ -49,7 +50,7 @@ useEffect(() => {
           )}
         </div>
       </div>
-   
+   </div>
   );
 }
 

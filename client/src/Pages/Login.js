@@ -61,24 +61,6 @@ const Login = () => {
         style={{ backgroundImage: `url(${bgImage})` }}
       />
 
-      {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-light px-4 shadow-sm justify-content-center position-relative z-3">
-        <a
-          className="navbar-brand fw-bold fs-4 text-primary d-flex align-items-center gap-2"
-          href="/"
-        >
-          <img
-            src={logo}
-            alt="Logo"
-            style={{ width: "35px", height: "35px", objectFit: "contain" }}
-          />
-          <span
-            style={{ fontSize: "2rem", color: "#404969", fontWeight: "bold" }}
-          >
-            Employee Management System
-          </span>
-        </a>
-      </nav>
 
       {/* Login Form */}
       <div className="login-content">

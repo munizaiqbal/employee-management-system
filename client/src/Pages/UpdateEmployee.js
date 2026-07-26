@@ -49,8 +49,10 @@ const UpdateEmployee = () => {
   const goEdit = (id) => navigate(`/update/${id}`);
 
   return (
-      <div className="flex-grow-1 p-4 ms-4 mt-3 ">
-    <div className="container  ms-5 mt-5 box">
+    <div className="main-content">
+      <div className="container-fluid px-2 px-sm-3 px-md-4 py-md-4"></div>
+      <div className="flex-grow-1 p-4 ms-4 mt-3 ms-3 ">
+   
       <h3 className="mb-3">Update Employee</h3>
 
       {error && <div className="alert alert-danger">{error}</div>}
@@ -66,8 +68,9 @@ const UpdateEmployee = () => {
       </div>
 
       <div className="card shadow-sm ">
-        <div className="card-body p-0">
-          <table className="table mb-0">
+          <div className="card-body p-0">
+          <div className="table-responsive">
+          <table className="table align-middle mb-0">
             <thead>
               <tr>
                 <th>Name</th>
@@ -104,11 +107,13 @@ const UpdateEmployee = () => {
                 ))
               )}
             </tbody>
-          </table>
+              </table>
+              </div>
         </div>
       </div>
     </div>
-    </div>
+      </div>
+     
   );
 };
 

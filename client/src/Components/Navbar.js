@@ -100,7 +100,7 @@ export default function Navbar() {
   // Hide everything except logo when not logged in
   if (!isLoggedIn) {
     return (
-      <nav className="navbar navbar-light bg-light shadow-sm fixed-top border-bottom px-4">
+      <nav style={{ zIndex: 1050 }} className="navbar navbar-light bg-light shadow-sm fixed-top border-bottom px-4 justify-content-center ">
         <a
           className="navbar-brand fw-bold fs-4 text-primary d-flex align-items-center gap-2"
           href="/"
@@ -110,8 +110,8 @@ export default function Navbar() {
             alt="Logo"
             style={{ width: "35px", height: "35px", objectFit: "contain" }}
           />
-          <span
-            style={{ fontSize: "2rem", color: "#404969", fontWeight: "bold" }}
+          <span className="text-wrap"
+            style={{ fontSize: "1.3rem", color: "#404969", fontWeight: "bold", }}
           >
             Employee Management System
           </span>
@@ -121,7 +121,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="navbar navbar-expand-md p-1 p-sm-3 navbar-light bg-light shadow-sm fixed-top border-bottom px-3 px-lg-4">
+    <nav style={{ zIndex: 1050 }} className="navbar navbar-expand-md p-1 p-sm-3 navbar-light bg-light shadow-sm fixed-top border-bottom px-3 px-lg-4">
       <div className="container-fluid">
         {/* Logo */}
         <a
@@ -134,7 +134,7 @@ export default function Navbar() {
             style={{ width: "35px", height: "35px", objectFit: "contain" }}
           />
           <span
-            className="d-none d-sm-inline me-0 me-md-4"
+            className="d-none d-sm-inline me-0 me-md-4 text-wrap"
             style={{
               fontSize: "1.35rem",
               color: "#404969",

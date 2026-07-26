@@ -71,11 +71,11 @@ export default function EmployeeDashboard() {
 
   return (
     <div className="main-content">
-      <div className="container-fluid px-2 px-sm-3 px-md-4 py-4 py-sm-5">
+      <div className="container-fluid px-2 px-sm-3 px-md-4 py-4 py-sm-5 mt-md-5">
         {/* Welcome Section */}
         <div className="text-center text-sm-start mb-4">
           <h2 className="fw-bold text-primary fs-2 fs-sm-1">
-            Welcome, {user?.username || "Employee"}
+            Welcome, {user?.username || "Employee"} 
           </h2>
           <p className="text-muted small">Your daily attendance record</p>
         </div>
