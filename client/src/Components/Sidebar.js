@@ -101,19 +101,34 @@ const Sidebar = () => {
 
         {/* Employee-only dashboard link */}
         {role === "employee" && (
-          <NavLink
-            to="/employee-dashboard"
-            className={({ isActive }) =>
-              `d-flex align-items-center justify-content-center  gap-2  px-3 py-2 rounded text-decoration-none w-100  w-md-auto ${
-            isActive ? "bg-primary text-white" : "text-dark"
-          }`
-            }
-            title="Dashboard"
-          >
-            <FaTachometerAlt />
-            <span className="d-none d-sm-inline">Dashboard</span>
-          </NavLink>
-        )}
+
+<NavLink
+
+  to="/employee-dashboard"
+
+  className={({ isActive }) =>
+
+    `d-flex align-items-center w-100 w-md-auto justify-content-center gap-2 px-3 py-2 rounded text-decoration-none ${
+
+      isActive ? "bg-primary text-white" : "text-dark"
+
+    }`
+
+  }
+
+  title="Dashboard"
+
+>
+
+  <FaTachometerAlt />
+
+  <span className="d-none d-sm-inline">Dashboard</span>
+
+</NavLink>
+
+)} 
+
+
       </nav>
 
       {/* 🚪 Logout Button — Only visible when logged in */}

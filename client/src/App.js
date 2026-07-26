@@ -24,98 +24,95 @@ import EditEmployee from "./Pages/EditEmployee";
 function LayoutWrapper() {
   const location = useLocation();
 
-  // Hide Navbar & Sidebar on Login or Signup pages
-  const hideSidebar = ["/login", "/signup"].includes(
+  // Hide Sidebar on Login or Signup pages
+  const hideSidebar = ["/", "/login", "/signup"].includes(
     location.pathname.toLowerCase(),
   );
-
   return (
     <>
-       <Navbar />
-     <div className="d-flex flex-column flex-md-row mt-3">
-      {!hideSidebar && <Sidebar />} 
+      <Navbar />
+      <div className="d-flex flex-column flex-md-row mt-3">
+        {!hideSidebar && <Sidebar />}
 
-      <div
-        className=" flex-grow-1 "
-      >
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+        <div className=" flex-grow-1 ">
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
 
-          {/* Admin Routes */}
-          <Route
-            path="/admin"
-            element={
-              <PrivateRoute role="admin">
-                <AdminDashboard />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/add-employee"
-            element={
-              <PrivateRoute role="admin">
-                <AddEmployee />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/employees"
-            element={
-              <PrivateRoute role="admin">
-                <EmployeeList />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/update-employee"
-            element={
-              <PrivateRoute role="admin">
-                <UpdateEmployee />
-              </PrivateRoute>
-            }
-          />
+            {/* Admin Routes */}
+            <Route
+              path="/admin"
+              element={
+                <PrivateRoute role="admin">
+                  <AdminDashboard />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/add-employee"
+              element={
+                <PrivateRoute role="admin">
+                  <AddEmployee />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/employees"
+              element={
+                <PrivateRoute role="admin">
+                  <EmployeeList />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/update-employee"
+              element={
+                <PrivateRoute role="admin">
+                  <UpdateEmployee />
+                </PrivateRoute>
+              }
+            />
 
-          <Route
-            path="/update/:id"
-            element={
-              <PrivateRoute role="admin">
-                <EditEmployee />
-              </PrivateRoute>
-            }
-          />
+            <Route
+              path="/update/:id"
+              element={
+                <PrivateRoute role="admin">
+                  <EditEmployee />
+                </PrivateRoute>
+              }
+            />
 
-          {/* Employee Routes */}
-          <Route
-            path="/profile"
-            element={
-              <PrivateRoute role="employee">
-                <Profile />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/attendance"
-            element={
-              <PrivateRoute role="employee">
-                <Attendance />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/employee-dashboard"
-            element={
-              <PrivateRoute role="employee">
-                <EmployeeDashboard />
-              </PrivateRoute>
-            }
-          />
+            {/* Employee Routes */}
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute role="employee">
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/attendance"
+              element={
+                <PrivateRoute role="employee">
+                  <Attendance />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/employee-dashboard"
+              element={
+                <PrivateRoute role="employee">
+                  <EmployeeDashboard />
+                </PrivateRoute>
+              }
+            />
 
-          {/* Default Route */}
-          <Route path="*" element={<Login />} />
-        </Routes>
-      </div>
+            {/* Default Route */}
+            <Route path="*" element={<Login />} />
+          </Routes>
+        </div>
       </div>
     </>
   );
