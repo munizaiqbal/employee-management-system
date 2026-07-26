@@ -34,7 +34,7 @@ function LayoutWrapper() {
       <div className="d-flex flex-column flex-md-row mt-3">
         {!hideSidebar && <Sidebar />}
 
-        <div className={`${hideSidebar ? "" : "main-content"} flex-grow-1`}>
+        <div className={`${hideSidebar ? "flex-grow-1" : "main-content flex-grow-1"}`}>
           <Routes>
             {/* Public Routes */}
             <Route path="/login" element={<Login />} />
