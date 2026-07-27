@@ -49,7 +49,7 @@ const UpdateEmployee = () => {
   const goEdit = (id) => navigate(`/update/${id}`);
 
   return (
-    <div className="main-content">
+  
       <div className="container-fluid px-2 px-sm-3 px-md-4 py-md-4"></div>
       <div className="flex-grow-1 p-4 ms-4 mt-3 ms-3 ">
    
@@ -112,7 +112,7 @@ const UpdateEmployee = () => {
         </div>
       </div>
     </div>
-      </div>
+      
      
   );
 };

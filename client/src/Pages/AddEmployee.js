@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import api from "../Services/api";
 import Swal from "sweetalert2";
-
 import { AuthContext } from "../Context/AuthContext";
 
 export default function AddEmployee() {
@@ -50,7 +49,7 @@ export default function AddEmployee() {
   };
 
   return (
-    <div className="main-content">
+   
       <div className="container-fluid px-2 px-sm-3 px-md-4 py-4 mt-0 mt-md-5 pt-5 ms-3">
       <h3 className="mb-3">
          Add New Employee
@@ -122,6 +121,6 @@ export default function AddEmployee() {
         </div>
       </form>
       </div>
-      </div>
+     
   );
 }

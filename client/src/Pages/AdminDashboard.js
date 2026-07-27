@@ -60,7 +60,7 @@ const AdminDashboard = () => {
   if (!stats) return null;
 
   return (
-    <div className="main-content">
+    
       <div className="container-fluid px-2 px-sm-3 px-md-4 py-md-4 mt-md-5">
         <div className="d-flex flex-column gap-3">
           {/* Header */}
@@ -169,7 +169,7 @@ const AdminDashboard = () => {
           )}
         </div>
       </div>
-    </div>
+    
   );
 };
 

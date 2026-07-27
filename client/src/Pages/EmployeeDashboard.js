@@ -70,7 +70,7 @@ export default function EmployeeDashboard() {
   };
 
   return (
-    <div className="main-content">
+    
       <div className="container-fluid px-2 px-sm-3 px-md-4 py-4 py-sm-5 mt-md-5">
         {/* Welcome Section */}
         <div className="text-center text-sm-start mb-4">
@@ -261,7 +261,7 @@ export default function EmployeeDashboard() {
               </>
             )}
           </div>
-        </div>
+        
 
       
       </div>
