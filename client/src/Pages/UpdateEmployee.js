@@ -50,7 +50,7 @@ const UpdateEmployee = () => {
 
   return (
   
-      <div className="container-fluid px-2 px-sm-3 px-md-4 py-md-4"></div>
+      <div className="container-fluid px-2 px-sm-3 px-md-4 py-md-4">
       <div className="flex-grow-1 p-4 ms-4 mt-3 ms-3 ">
    
       <h3 className="mb-3">Update Employee</h3>
@@ -112,8 +112,8 @@ const UpdateEmployee = () => {
         </div>
       </div>
     </div>
-      
      
+    </div>
   );
 };
 

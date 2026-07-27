@@ -115,7 +115,7 @@ export default function AddEmployee() {
         </div>
 
         <div className="col-12">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary mt-2">
             Add Employee
           </button>
         </div>

@@ -31,7 +31,6 @@ useEffect(() => {
   }, [loading, user]);
 
   return (
-    <div className="main-content">
       <div className="container-fluid ms-3 mt-5 box pt-2">
       <div className="flex-grow-1 p-4 mt-3">
         
@@ -50,7 +49,7 @@ useEffect(() => {
           )}
         </div>
       </div>
-   </div>
+   
   );
 }
 
