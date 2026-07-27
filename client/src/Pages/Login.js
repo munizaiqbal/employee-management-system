@@ -5,7 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 import { AuthContext } from "../Context/AuthContext";
-import logo from "../Assets/employeelogo.png";
+
 import bgImage from "../Assets/ems.jpg";
 import "./Login.css";
 

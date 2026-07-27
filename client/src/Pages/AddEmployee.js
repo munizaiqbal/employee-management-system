@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import api from "../Services/api";
 import Swal from "sweetalert2";
-import { FaUserPlus } from "react-icons/fa";
+
 import { AuthContext } from "../Context/AuthContext";
 
 export default function AddEmployee() {
